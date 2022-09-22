@@ -11,13 +11,14 @@ class User:
 
     def describe_user(self):
         """Prints a summary of the user's information"""
-        print(f"{self.first_name} {self.last_name} is from {self.location}."
-              f"\n{self.first_name} can be reached at {self.email}."
-              f"\n{self.first_name}'s username is {self.username}.")
+        print(f"{self.first_name.title()} {self.last_name.title()} is from"
+              f" {self.location}."
+              f"\n{self.first_name.title()} can be reached at {self.email}."
+              f"\n{self.first_name.title()}'s username is {self.username}.")
 
     def greet_user(self):
         """Prints a personalized greeting to the user"""
-        print(f"Hello {self.first_name} {self.last_name}!")
+        print(f"Hello {self.first_name.title()} {self.last_name.title()}!")
 
 
 user_1 = User('joe', 'smith', 'jsmith', 'jsmith@email.com',
@@ -34,3 +35,6 @@ user_1.greet_user()
 print("#######")
 user_2.describe_user()
 user_2.greet_user()
+print("#######")
+user_3.describe_user()
+user_3.greet_user()
