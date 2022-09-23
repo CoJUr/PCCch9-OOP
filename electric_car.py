@@ -37,6 +37,21 @@ class Car:
         print("The gas tank is full.")
 
 
+class Battery:
+    """A simple attempt to model an electric car battery."""
+
+    def __init__(self, battery_size=75):
+        """Init the battery's attributes"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """
+        Print a statement describing the battery size.
+        Extracted from ElectricCar class
+        """
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+
 class ElectricCar(Car):
     """Represents aspects of a car, specific to electric vehicles"""
 
@@ -46,11 +61,12 @@ class ElectricCar(Car):
         Then initialize attributes specific to an electric car.
         """
         super().__init__(make, model, year)
-        self.battery_size = 75
+        # self.battery_size = 75
+        self.battery = Battery()
 
-    def describe_battery(self):
-        """Print a statement describing the battery size."""
-        print(f"This car has a {self.battery_size}-kWh battery.")
+    # def describe_battery(self):
+    #     """Print a statement describing the battery size."""
+    #     print(f"This car has a {self.battery_size}-kWh battery.")-snip-
 
     def fill_gas_tank(self):
         """Electric cars don't have gas tanks. Overriding parent method."""
@@ -59,6 +75,6 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar("tesla", "model s", 2019)
 print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
-
+# my_tesla.describe_battery()
+my_tesla.battery.describe_battery()
 
