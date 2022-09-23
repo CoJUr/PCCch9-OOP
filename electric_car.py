@@ -32,6 +32,10 @@ class Car:
         """Add the given amount to the current odometer reading"""
         self.odometer_reading += miles
 
+    def fill_gas_tank(self):
+        """Prints a statement indicating the gas tank is now full"""
+        print("The gas tank is full.")
+
 
 class ElectricCar(Car):
     """Represents aspects of a car, specific to electric vehicles"""
@@ -47,6 +51,10 @@ class ElectricCar(Car):
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def fill_gas_tank(self):
+        """Electric cars don't have gas tanks. Overriding parent method."""
+        print("This ELECTRIC car doesn't need a gas tank!")
 
 
 my_tesla = ElectricCar("tesla", "model s", 2019)
