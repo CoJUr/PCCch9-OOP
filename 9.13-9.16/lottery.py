@@ -5,3 +5,7 @@ for i in range(4):
     from random import choice
     print(choice(lottery_ticket))
 
+
+
+
+
