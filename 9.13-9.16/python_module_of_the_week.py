@@ -70,6 +70,7 @@ deck = new_deck()
 print('Initial deck:')
 show_deck(deck)
 
+
 # shuffle the deck
 random.shuffle(deck)
 print('\nShuffled deck:')
