@@ -1,4 +1,4 @@
-In python you can import the module and use the function as follows:
+In Python you can import the module and use the function as follows:
 from datetime import datetime
 datetime.now()
 
