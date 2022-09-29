@@ -45,7 +45,7 @@ def get_stored_username():
         with open(filename) as f:
             username = json.load(f)
     except FileNotFoundError:
-        return None
+        return None  # return None if file doesn't exist
     else:
         return username
 
