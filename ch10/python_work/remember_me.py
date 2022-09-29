@@ -12,19 +12,6 @@ try-except block.
 import json
 
 
-def greet_user():
-    """Refactoring. Greet the user by name (do-one-thing rule)."""
-    username = get_stored_username()
-    if username:
-        print(f"Welcome back, {username}!")
-    else:
-        username = input("What is your name? ")
-        filename = 'json_files/username.json'
-        with open(filename, 'w') as f:
-            json.dump(username, f)
-            print(f"We'll remember you when you come back, {username}!")
-
-
 # filename = 'json_files/username.json'
 # try:
 #     with open(filename) as f:
@@ -48,6 +35,31 @@ def get_stored_username():
         return None  # return None if file doesn't exist
     else:
         return username
+
+
+def get_new_username():
+    """Prompt for a new username - taking responsibility from greet_user()"""
+    username = input("what is your name? ")
+    filename = 'json_files/username.json'
+
+    with open(filename, 'w') as f:
+        json.dump(username, f)
+    return username
+
+
+def greet_user():
+    """Refactoring to ONLY greet the user by name."""
+    username = get_stored_username()
+    if username:
+        print(f"Welcome back, {username}!")
+    else:
+        username = get_new_username()
+        print(f"We'll remember you when you come back, {username}!")
+        # username = input("What is your name? ")
+        # filename = 'json_files/username.json'
+        # with open(filename, 'w') as f:
+        #     json.dump(username, f)
+        #     print(f"We'll remember you when you come back, {username}!")
 
 
 greet_user()
