@@ -26,7 +26,7 @@ import json
 
 
 def get_stored_username():
-    """Get stored username if available."""
+    """Responsible only for getting a stored username if one exists."""
     filename = 'json_files/username.json'
     try:
         with open(filename) as f:
