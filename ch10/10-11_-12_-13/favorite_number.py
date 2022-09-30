@@ -26,3 +26,5 @@ def read_favorite_number():
 
 
 read_favorite_number()
+
+
